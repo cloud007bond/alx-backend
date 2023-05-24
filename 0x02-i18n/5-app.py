@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""A Basic Flask app with internationalization support.
+"""Mock logging in
 """
+from flask import Flask
 from flask_babel import Babel
+from flask import render_template, request, g
 from typing import Union, Dict
-from flask import Flask, render_template, request, g
 
 
 class Config:
@@ -37,7 +38,7 @@ def get_user() -> Union[Dict, None]:
 
 @app.before_request
 def before_request() -> None:
-    """Performs some routines before each request's resolution.
+    """user login system is outside the scope of this project
     """
     user = get_user()
     g.user = user
